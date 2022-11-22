@@ -1,11 +1,11 @@
-<header class="banner">
+<header class="banner text-center text-lg my-8">
   <a class="brand" href="{{ home_url('/') }}">
     {!! $siteName !!}
   </a>
-
-  @if (has_nav_menu('primary_navigation'))
-    <nav class="nav-primary" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
-      {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
-    </nav>
-  @endif
 </header>
+
+{!! apply_filters('litespeed_esi_url', 'fondues_loader', 'fondues_loader partials.header', ['view' => 'partials.esitest']) !!}
+
+<div class="text-5xl bg-gray-200 p-10 my-10 container mx-auto">
+  <a class="bg-blue-500 text-white font-bold rounded-lg px-2 py-1" href="{!! home_url('/?force_purge=1') !!}">Purge</a>
+</div>
